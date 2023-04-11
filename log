@@ -305,3 +305,18 @@ hashmap.c:70:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 f1cb5d0
+Tue 11 Apr 2023 12:35:26 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:64:21: error: ‘pair’ undeclared (first use in this function); did you mean ‘Pair’?
+   64 |     map->buckets = (pair **) calloc(capacity,sizeof(Pair *));
+      |                     ^~~~
+      |                     Pair
+hashmap.c:64:21: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:64:28: error: expected expression before ‘)’ token
+   64 |     map->buckets = (pair **) calloc(capacity,sizeof(Pair *));
+      |                            ^
+Compilation failed
+b16e5cc
