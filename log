@@ -83,3 +83,38 @@ hashmap.c:70:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 a269378
+Tue 11 Apr 2023 12:33:12 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:62:19: error: invalid initializer
+   62 |     HashMap map = (HashMap *) malloc(sizeof(HashMap));
+      |                   ^
+hashmap.c:63:12: error: invalid operands to binary == (have ‘HashMap’ {aka ‘struct HashMap’} and ‘void *’)
+   63 |     if (map==NULL)return NULL;
+      |            ^~
+hashmap.c:64:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   64 |     map->buckets = calloc(capacity,sizeof(Pair *));
+      |        ^~
+hashmap.c:65:12: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   65 |     if (map->buckets==NULL)return NULL;
+      |            ^~
+hashmap.c:66:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   66 |     map->size=0;
+      |        ^~
+hashmap.c:67:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   67 |     map->capacity=capacity;
+      |        ^~
+hashmap.c:68:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   68 |     map->current=-1;
+      |        ^~
+hashmap.c:69:12: error: incompatible types when returning type ‘HashMap’ {aka ‘struct HashMap’} but ‘HashMap *’ {aka ‘struct HashMap *’} was expected
+   69 |     return map;
+      |            ^~~
+hashmap.c:70:1: error: control reaches end of non-void function [-Werror=return-type]
+   70 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+8d03072
