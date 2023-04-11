@@ -231,3 +231,40 @@ hashmap.c:70:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 5157724
+Tue 11 Apr 2023 12:34:50 AM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:62:19: error: invalid initializer
+   62 |     HashMap map = (HashMap *) malloc(sizeof(HashMap));
+      |                   ^
+hashmap.c:64:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   64 |     map->buckets = (pair *) calloc(capacity,sizeof(Pair *));
+      |        ^~
+hashmap.c:64:21: error: ‘pair’ undeclared (first use in this function); did you mean ‘Pair’?
+   64 |     map->buckets = (pair *) calloc(capacity,sizeof(Pair *));
+      |                     ^~~~
+      |                     Pair
+hashmap.c:64:21: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:64:27: error: expected expression before ‘)’ token
+   64 |     map->buckets = (pair *) calloc(capacity,sizeof(Pair *));
+      |                           ^
+hashmap.c:66:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   66 |     map->size = 0;
+      |        ^~
+hashmap.c:67:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   67 |     map->capacity = capacity;
+      |        ^~
+hashmap.c:68:8: error: invalid type argument of ‘->’ (have ‘HashMap’ {aka ‘struct HashMap’})
+   68 |     map->current = -1;
+      |        ^~
+hashmap.c:69:12: error: incompatible types when returning type ‘HashMap’ {aka ‘struct HashMap’} but ‘HashMap *’ {aka ‘struct HashMap *’} was expected
+   69 |     return map;
+      |            ^~~
+hashmap.c:70:1: error: control reaches end of non-void function [-Werror=return-type]
+   70 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+1fc821f
