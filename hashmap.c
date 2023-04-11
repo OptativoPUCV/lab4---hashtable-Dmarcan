@@ -62,7 +62,7 @@ HashMap * createMap(long capacity) {
     HashMap map=malloc(sizeof(HashMap));
     if (map==NULL)return NULL;
     
-    return map
+    return map;
 }
 
 void eraseMap(HashMap * map,  char * key) {    
