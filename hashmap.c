@@ -59,7 +59,7 @@ struct HashMap {
 };
 */
 HashMap * createMap(long capacity) {
-    HashMap map = (HashMap *) malloc(sizeof(HashMap));
+    HashMap map = (HashMap *) malloc(sizeof(HashMap *));
     if (map==NULL)return NULL;
     map->buckets = calloc(capacity,sizeof(Pair *));
     if (map->buckets==NULL)return NULL;
