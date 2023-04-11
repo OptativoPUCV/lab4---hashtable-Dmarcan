@@ -2,3 +2,29 @@ Tue 11 Apr 2023 12:20:56 AM UTC:
  tests:  0|6
 total_score: 0/70
 380ea61
+Tue 11 Apr 2023 12:27:54 AM UTC: 
+ hashmap.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:62:17: error: invalid initializer
+   62 |     HashMap map=malloc(sizeof(HashMap));
+      |                 ^~~~~~
+hashmap.c:63:12: error: invalid operands to binary == (have ‘HashMap’ {aka ‘struct HashMap’} and ‘void *’)
+   63 |     if (map==NULL)return NULL;
+      |            ^~
+hashmap.c:65:12: error: incompatible types when returning type ‘HashMap’ {aka ‘struct HashMap’} but ‘HashMap *’ {aka ‘struct HashMap *’} was expected
+   65 |     return map
+      |            ^~~
+hashmap.c:65:15: error: expected ‘;’ before ‘}’ token
+   65 |     return map
+      |               ^
+      |               ;
+   66 | }
+      | ~              
+hashmap.c:66:1: error: control reaches end of non-void function [-Werror=return-type]
+   66 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+924dd0c
