@@ -455,3 +455,14 @@ hashmap.c:61:40: error: expected ‘;’ before ‘}’ token
 cc1: all warnings being treated as errors
 Compilation failed
 2fdf847
+Thu 13 Apr 2023 06:04:24 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:61:33: error: statement with no effect [-Werror=unused-value]
+   61 |             map->buckets[indice]->value;
+      |             ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+73d5153
