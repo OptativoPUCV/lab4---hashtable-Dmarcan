@@ -60,7 +60,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         {
             printf("lolo");
         
-        printf("lolo");
+        //printf("lolo");
     }
 
 }
