@@ -64,17 +64,16 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     if (is_equal(key,map->buckets[indice]->key)==1)return;
     indice++;
-    while(map->buckets[indice]!=NULL)
+    while(map->buckets[indice]->key!=NULL && is_equal(key,map->buckets[indice]->key)==1)
     {
-        if (is_equal(key,map->buckets[indice]->key)==1)return;
-        if (map->buckets[indice]->key==NULL )
-        {
-            map->buckets[indice]=createPair(key,value);
-            map->current=indice;
-            map->size++;
-            return;
-        }
         indice++;
+    }
+    if (map->buckets[indice]->key==NULL )
+    {
+        map->buckets[indice]=createPair(key,value);
+        map->current=indice;
+        map->size++;
+        return;
     }
 }
 
