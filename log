@@ -565,3 +565,14 @@ Thu 13 Apr 2023 06:36:39 PM UTC:
  tests:  2|5
 total_score: 20/70
 981f27e
+Thu 13 Apr 2023 06:38:27 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:69:13: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+   69 |         if (map->buckets[k]=NULL )
+      |             ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+c6871d2
