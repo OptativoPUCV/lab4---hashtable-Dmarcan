@@ -53,6 +53,11 @@ Recuerde que el arreglo es **circular**.
 Recuerde actualizar la variable size.
 */
 void insertMap(HashMap * map, char * key, void * value) {
+    if (map->size==0) 
+    {
+        map->capacity=2;
+        createMap(2);
+    }
     long indice = hash(key,map->capacity);
     if (map->buckets[indice]->key==NULL)
     {
