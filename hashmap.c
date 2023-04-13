@@ -87,11 +87,13 @@ Recuerde que el arreglo es **circular**.
 */
 Pair * searchMap(HashMap * map,  char * key) {   
     long indice = hash(key,map->capacity);
+    /*
     if (is_equal(key,map->buckets[indice]->key)==1)
     {
         map->current=indice;
         return map->buckets[indice];
     }
+    */
     while (map->buckets[indice]!=NULL)
     {
         if (is_equal(key,map->buckets[indice]->key)==1)
