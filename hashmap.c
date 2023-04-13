@@ -58,7 +58,8 @@ void insertMap(HashMap * map, char * key, void * value) {
     {
         if (map->buckets[indice]->key==NULL)
         {
-            map->buckets[indice]->value=value;
+            Pair * nuevo=createPair(key,value);
+            map->buckets[indice]=nuevo;
         }
         
         printf("lolo");
