@@ -64,8 +64,9 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     if (is_equal(key,map->buckets[indice]->key)==1)return;
     indice++;
-    while(map->buckets[indice]->key!=NULL && is_equal(key,map->buckets[indice]->key)==1)
+    while(map->buckets[indice]->key!=NULL)
     {
+        if (is_equal(key,map->buckets[indice]->key)==1)return;
         indice++;
     }
     if (map->buckets[indice]->key==NULL )
