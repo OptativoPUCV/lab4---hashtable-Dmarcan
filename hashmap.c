@@ -38,9 +38,26 @@ int is_equal(void* key1, void* key2){
     return 0;
 }
 
+/*
+Implemente la función void insertMap(HashMap * map, char * key, void * value). Esta función inserta un nuevo dato (key,value) en el mapa y actualiza el índice current a esa posición.
+Recuerde que para insertar un par (clave,valor) debe:
 
+a - Aplicar la función hash(hash( char * key, long capacity) {) a la clave para obtener la posición donde debería insertar el nuevo par
+
+b - Si la casilla se encuentra ocupada, avance hasta una casilla disponible (*método de resolución de colisiones*). Una casilla disponible es una casilla nula, pero también una que tenga un par inválido (key==NULL).
+
+c - Ingrese el par en la casilla que encontró.
+
+No inserte claves repetidas. 
+Recuerde que el arreglo es **circular**.
+Recuerde actualizar la variable size.
+*/
 void insertMap(HashMap * map, char * key, void * value) {
-
+    long indice = hash(key,map->capacity);
+    if (map->buckets[indice]->key==NULL)
+    {
+        printf("lolo");
+    }
 
 }
 
