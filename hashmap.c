@@ -43,8 +43,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     while (map->buckets[indice]!=NULL && map->buckets[indice]->key!=NULL)
     {
         if (is_equal(key,map->buckets[indice]->key)==1)return;
-        indice=(indice+1)%map->capacity;
-            
+        indice=(indice+1)%map->capacity;    
     }
     map->buckets[indice]=createPair(key,value);
     map->current=indice;
@@ -73,10 +72,35 @@ void eraseMap(HashMap * map,  char * key) {
 
 
 }
+/*
+Implemente la función Pair * searchMap(HashMap * map,  char * key), la cual retorna el **Pair** asociado a la clave ingresada. 
+Recuerde que para buscar el par debe:
 
+a - Usar la función hash para obtener la posición donde puede encontrarse el par con la clave
+
+b - Si la clave no se encuentra avance hasta encontrarla (*método de resolución de colisiones*)
+
+c - Si llega a una casilla nula, retorne NULL inmediatamente (no siga avanzando, la clave no está)
+
+Recuerde actualizar el índice current a la posición encontrada.
+Recuerde que el arreglo es **circular**.
+*/
 Pair * searchMap(HashMap * map,  char * key) {   
-
-
+    long indice = hash(key,map->capacity);
+    if (is_equal(key,map->buckets[indice]->key)==1)
+    {
+        map->current=indice;
+        return map->buckets[indice];
+    }
+    while (map->buckets[indice]->key!=NULL)
+    {
+        if (is_equal(key,map->buckets[indice]->key)==1)
+        {
+            map->current=indice;
+            return map->buckets[indice];
+        }
+        indice=(indice+1)%map->capacity;    
+    }
     return NULL;
 }
 
