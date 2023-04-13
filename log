@@ -576,3 +576,9 @@ hashmap.c:69:13: error: suggest parentheses around assignment used as truth valu
 cc1: all warnings being treated as errors
 Compilation failed
 c6871d2
+Thu 13 Apr 2023 06:38:38 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|5
+total_score: 20/70
+4169540
