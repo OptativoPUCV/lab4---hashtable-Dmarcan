@@ -92,7 +92,7 @@ Pair * searchMap(HashMap * map,  char * key) {
         map->current=indice;
         return map->buckets[indice];
     }
-    while (map->buckets[indice]->key!=NULL)
+    while (map->buckets[indice]!=NULL)
     {
         if (is_equal(key,map->buckets[indice]->key)==1)
         {
