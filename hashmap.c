@@ -66,7 +66,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     for (size_t k=indice;map->buckets[k]!=NULL;k++)
     {
         if (is_equal(key,map->buckets[indice]->key)==1)return;
-        if (map->buckets[k]==NULL )
+        if (map->buckets[k]->key==NULL )
         {
             map->buckets[k]=createPair(key,value);
             map->current=k;
