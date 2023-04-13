@@ -54,9 +54,12 @@ Recuerde actualizar la variable size.
 */
 void insertMap(HashMap * map, char * key, void * value) {
     long indice = hash(key,map->capacity);
-    if (map->buckets[indice]->key==NULL)
+    if (map->size==0)
     {
-        printf("lolo");
+        if (map->buckets[indice]->key==NULL)
+        {
+            printf("lolo");
+        }
     }
 
 }
