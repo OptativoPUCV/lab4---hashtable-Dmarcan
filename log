@@ -531,3 +531,20 @@ Thu 13 Apr 2023 06:34:00 PM UTC:
  1 file changed, 1 insertion(+), 5 deletions(-)
  tests:  0|0
 9eb3377
+Thu 13 Apr 2023 06:34:42 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:56:40: error: expected statement before ‘)’ token
+   56 |     if(map->size / map->capacity > 0.7))return;
+      |                                        ^
+hashmap.c:56:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   56 |     if(map->size / map->capacity > 0.7))return;
+      |     ^~
+hashmap.c:56:41: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   56 |     if(map->size / map->capacity > 0.7))return;
+      |                                         ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+39b4c16
