@@ -54,7 +54,7 @@ Recuerde actualizar la variable size.
 */
 void insertMap(HashMap * map, char * key, void * value) {
     long indice = hash(key,map->capacity);
-    while (map->buckets[indice]!=NULL || map->buckets[indice]->key!=NULL)
+    while (map->buckets[indice]!=NULL && map->buckets[indice]->key!=NULL)
     {
         if (is_equal(key,map->buckets[indice]->key)==1)return;
         indice++;
