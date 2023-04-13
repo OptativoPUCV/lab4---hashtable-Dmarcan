@@ -58,7 +58,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     {
         if (map->buckets[indice]->key==NULL)
         {
-            printf("lolo");
+            map->buckets[indice]->value
         }
         
         printf("lolo");

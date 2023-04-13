@@ -438,3 +438,20 @@ Thu 13 Apr 2023 05:40:24 PM UTC:
  tests:  1|5
 total_score: 10/70
 520c369
+Thu 13 Apr 2023 05:41:30 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:61:33: error: statement with no effect [-Werror=unused-value]
+   61 |             map->buckets[indice]->value
+      |             ~~~~~~~~~~~~~~~~~~~~^~~~~~~
+hashmap.c:61:40: error: expected ‘;’ before ‘}’ token
+   61 |             map->buckets[indice]->value
+      |                                        ^
+      |                                        ;
+   62 |         }
+      |         ~                               
+cc1: all warnings being treated as errors
+Compilation failed
+2fdf847
