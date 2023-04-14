@@ -713,3 +713,14 @@ Fri 14 Apr 2023 12:14:39 AM UTC:
  tests:  12|2
 total_score: 50/70
 275ae94
+Fri 14 Apr 2023 12:16:48 AM UTC: 
+ hashmap.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:116:49: error: value computed is not used [-Werror=unused-value]
+  116 |     for (size_t k=map->current;k<map->size;(k++)%map->capacity)
+      |                                            ~~~~~^~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+87d497b
