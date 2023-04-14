@@ -846,3 +846,8 @@ hashmap.c:80:45: error: ‘*viejos’ is a pointer; did you mean to use ‘->’
       |                                             ->
 Compilation failed
 0147039
+Fri 14 Apr 2023 12:36:44 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+8060c7d
