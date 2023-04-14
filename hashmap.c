@@ -114,9 +114,9 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     size_t k=map->current;
-   while(k<map->size)
+   while(k<map->capacity)
     {
-        if (map->buckets[k]!=NULL)
+        if (map->buckets[k] != NULL && map->buckets[k]->key != NULL)
         {
             map->current=k;
             return map->buckets[k];
