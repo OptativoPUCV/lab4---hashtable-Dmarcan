@@ -50,20 +50,6 @@ void insertMap(HashMap * map, char * key, void * value) {
     map->size++;
     return;
 }
-/*
-Implemente la función void enlarge(HashMap * map). Esta función agranda la capacidad del arreglo buckets y reubica todos sus elementos. Para hacerlo es recomendable mantener referenciado el arreglo *actual/antiguo* de la tabla con un puntero auxiliar. Luego, los valores de la tabla se reinicializan con un nuevo arreglo con el **doble de capacidad**. Por último los elementos del arreglo antiguo se insertan en el mapa *vacío* con el método *insertMap*.
-Puede seguir los siguientes pasos:
-
-a - Cree una variable auxiliar de tipo Pair** para matener el arreglo map->buckets (*old_buckets*);
-
-b - Duplique el valor de la variable capacity.
-
-c - Asigne a map->buckets un nuevo arreglo con la nueva capacidad.
-
-d - Inicialice size a 0.
-
-e - Inserte los elementos del arreglo *old_buckets* en el mapa (use la función insertMap que ya implementó).
-*/
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
@@ -73,14 +59,12 @@ void enlarge(HashMap * map) {
     map->buckets = (Pair **) calloc(map->capacity,sizeof(Pair *));
     if (map->buckets==NULL)exit(EXIT_FAILURE);
     map->size=0;
-
     for (long k=0;k<capacidadVieja;k++)
     {
         if (viejos[k] !=NULL && viejos[k]->key != NULL)
         {
             insertMap(map,viejos[k]->key,viejos[k]->value);
-        }
-            
+        }  
     }
     free(viejos);
 }
@@ -95,10 +79,6 @@ HashMap * createMap(long capacity) {
     map->current = -1;
     return map;
 }
-/* Implemente la función void eraseMap(HashMap * map,  char * key). Está función elimina el dato correspondiente a la clave key. Para hacerlo debe buscar el dato y luego *marcarlo* para que no sea válido.
-**No elimine el par**, sólo invalídelo asignando NULL a la clave (pair->key=NULL).
-Recuerde actualizar la variable size.
-*/
 
 void eraseMap(HashMap * map,  char * key) {    
     if (searchMap(map,key)!=NULL)
@@ -107,8 +87,6 @@ void eraseMap(HashMap * map,  char * key) {
         map->size--;
         return;
     }
-    
-
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
@@ -125,8 +103,6 @@ Pair * searchMap(HashMap * map,  char * key) {
     return NULL;
 }
 
-/*
-    Implemente las funciones para recorrer la estructura: Pair * firstMap(HashMap * map) retorna el primer **Pair** válido del arreglo buckets. Pair * nextMap(HashMap * map) retorna el siguiente **Pair** del arreglo buckets a partir índice current. Recuerde actualizar el índice.*/
 Pair * firstMap(HashMap * map) {
     for (size_t k=0;k<map->capacity;k++)
     {
