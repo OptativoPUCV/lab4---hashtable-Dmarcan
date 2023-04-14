@@ -724,3 +724,15 @@ hashmap.c:116:49: error: value computed is not used [-Werror=unused-value]
 cc1: all warnings being treated as errors
 Compilation failed
 87d497b
+Fri 14 Apr 2023 12:17:56 AM UTC: 
+ hashmap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:124:30: error: expected ‘;’ before ‘)’ token
+  124 |         k=(k+1)%map->capacity);
+      |                              ^
+      |                              ;
+hashmap.c:124:30: error: expected statement before ‘)’ token
+Compilation failed
+b629035
