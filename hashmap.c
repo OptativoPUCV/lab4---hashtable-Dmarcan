@@ -70,7 +70,7 @@ void enlarge(HashMap * map) {
     Pair** viejos=map->buckets;
     map->capacity*=2;
     map->buckets = (Pair **) calloc(map->capacity,sizeof(Pair *));
-    if (map->buckets==NULL)return NULL;
+    if (map->buckets==NULL)exit(EXIT_FAILURE);
     map->size=0;
 
     for (size_t k=0;k<((map->capacity)/2);k++)

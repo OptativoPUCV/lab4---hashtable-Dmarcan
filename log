@@ -831,3 +831,18 @@ hashmap.c:80:45: error: ‘*viejos’ is a pointer; did you mean to use ‘->’
 cc1: all warnings being treated as errors
 Compilation failed
 4394036
+Fri 14 Apr 2023 12:35:04 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:80:33: error: ‘*viejos’ is a pointer; did you mean to use ‘->’?
+   80 |             insertMap(map,viejos->key,viejos->value);
+      |                                 ^~
+      |                                 ->
+hashmap.c:80:45: error: ‘*viejos’ is a pointer; did you mean to use ‘->’?
+   80 |             insertMap(map,viejos->key,viejos->value);
+      |                                             ^~
+      |                                             ->
+Compilation failed
+0147039
