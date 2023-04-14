@@ -121,17 +121,5 @@ Pair * nextMap(HashMap * map) {
             return map->buckets[k];
         }
     }
-    /*
-    size_t k=map->current+1;
-   while(k<map->capacity)
-    {
-        if (map->buckets[k] != NULL && map->buckets[k]->key != NULL)
-        {
-            map->current=k;
-            return map->buckets[k];
-        }
-        k=(k+1)%map->capacity;
-    }
-    */
     return NULL;
 }
