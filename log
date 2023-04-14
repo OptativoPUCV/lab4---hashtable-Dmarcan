@@ -861,3 +861,18 @@ Fri 14 Apr 2023 12:41:17 AM UTC:
  1 file changed, 3 insertions(+), 3 deletions(-)
  tests:  0|0
 713b448
+Fri 14 Apr 2023 12:42:49 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:79:19: error: ‘*viejos’ is a pointer; did you mean to use ‘->’?
+   79 |         if (viejos->buckets[k] != NULL && viejos->buckets[k]->key != NULL)
+      |                   ^~
+      |                   ->
+hashmap.c:79:49: error: ‘*viejos’ is a pointer; did you mean to use ‘->’?
+   79 |         if (viejos->buckets[k] != NULL && viejos->buckets[k]->key != NULL)
+      |                                                 ^~
+      |                                                 ->
+Compilation failed
+c8738b5
