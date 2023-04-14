@@ -736,3 +736,9 @@ hashmap.c:124:30: error: expected ‘;’ before ‘)’ token
 hashmap.c:124:30: error: expected statement before ‘)’ token
 Compilation failed
 b629035
+Fri 14 Apr 2023 12:18:11 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  12|2
+total_score: 50/70
+089e8dd

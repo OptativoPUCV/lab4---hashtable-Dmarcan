@@ -121,7 +121,7 @@ Pair * nextMap(HashMap * map) {
             map->current=k;
             return map->buckets[k];
         }
-        k=(k+1)%map->capacity);
+        k=(k+1)%map->capacity;
     }
     return NULL;
 }
