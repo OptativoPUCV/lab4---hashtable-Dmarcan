@@ -899,3 +899,18 @@ hashmap.c:81:51: error: invalid type argument of ‘->’ (have ‘Pair’)
 cc1: all warnings being treated as errors
 Compilation failed
 48af517
+Fri 14 Apr 2023 12:46:01 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:79:19: error: ‘*viejos’ is a pointer; did you mean to use ‘->’?
+   79 |         if (viejos->buckets[k] != NULL && viejos->buckets[k]->key != NULL)
+      |                   ^~
+      |                   ->
+hashmap.c:79:49: error: ‘*viejos’ is a pointer; did you mean to use ‘->’?
+   79 |         if (viejos->buckets[k] != NULL && viejos->buckets[k]->key != NULL)
+      |                                                 ^~
+      |                                                 ->
+Compilation failed
+eb87d45
