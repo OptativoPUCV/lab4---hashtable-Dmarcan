@@ -876,3 +876,26 @@ hashmap.c:79:49: error: ‘*viejos’ is a pointer; did you mean to use ‘->’
       |                                                 ->
 Compilation failed
 c8738b5
+Fri 14 Apr 2023 12:45:49 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:70:18: error: initialization of ‘Pair *’ from incompatible pointer type ‘Pair **’ [-Werror=incompatible-pointer-types]
+   70 |     Pair* viejos=map->buckets;
+      |                  ^~~
+hashmap.c:79:19: error: ‘Pair’ has no member named ‘buckets’
+   79 |         if (viejos->buckets[k] != NULL && viejos->buckets[k]->key != NULL)
+      |                   ^~
+hashmap.c:79:49: error: ‘Pair’ has no member named ‘buckets’
+   79 |         if (viejos->buckets[k] != NULL && viejos->buckets[k]->key != NULL)
+      |                                                 ^~
+hashmap.c:81:36: error: invalid type argument of ‘->’ (have ‘Pair’)
+   81 |             insertMap(map,viejos[k]->key,viejos[k]->value);
+      |                                    ^~
+hashmap.c:81:51: error: invalid type argument of ‘->’ (have ‘Pair’)
+   81 |             insertMap(map,viejos[k]->key,viejos[k]->value);
+      |                                                   ^~
+cc1: all warnings being treated as errors
+Compilation failed
+48af517
